@@ -44,6 +44,22 @@
                 </configuration>
             </plugin>
 
+            <!-- Lancement du serveur : mvn exec:java@serveur -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>serveur</id>
+                        <goals><goal>java</goal></goals>
+                        <configuration>
+                            <mainClass>messagerie_instantane.server.LancerServeur</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
             <!-- Lancement : mvn javafx:run -->
             <plugin>
                 <groupId>org.openjfx</groupId>
