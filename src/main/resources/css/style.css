@@ -1,0 +1,136 @@
+/* ══════════════════════════════════════════════
+   Palette : Catppuccin Mocha
+   ══════════════════════════════════════════════ */
+
+/* ── Général ─────────────────────────────────── */
+.root {
+    -fx-background-color: #1e1e2e;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* ── Écran Login ─────────────────────────────── */
+.login-root {
+    -fx-background-color: #1e1e2e;
+    -fx-padding: 48;
+    -fx-spacing: 14;
+}
+.title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #cdd6f4;
+    -fx-padding: 0 0 12 0;
+}
+.error {
+    -fx-text-fill: #f38ba8;
+    -fx-font-size: 12px;
+}
+
+/* ── Champs texte ────────────────────────────── */
+.text-field {
+    -fx-background-color: #313244;
+    -fx-text-fill: #cdd6f4;
+    -fx-prompt-text-fill: #585b70;
+    -fx-background-radius: 8;
+    -fx-padding: 8 14;
+    -fx-border-color: transparent;
+}
+.text-field:focused {
+    -fx-border-color: #89b4fa;
+    -fx-border-radius: 8;
+    -fx-border-width: 1.5;
+}
+
+/* ── Bouton principal ────────────────────────── */
+.btn-primary {
+    -fx-background-color: #89b4fa;
+    -fx-text-fill: #1e1e2e;
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+    -fx-padding: 8 24;
+    -fx-cursor: hand;
+}
+.btn-primary:hover  { -fx-background-color: #74c7ec; }
+.btn-primary:pressed{ -fx-background-color: #5eb7e8; }
+
+/* ── Sidebar ─────────────────────────────────── */
+.sidebar {
+    -fx-background-color: #181825;
+    -fx-padding: 12 8;
+}
+.section-title {
+    -fx-text-fill: #a6adc8;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-padding: 8 4 4 4;
+}
+
+/* ── ListView ────────────────────────────────── */
+.list-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #cdd6f4;
+    -fx-padding: 6 8;
+    -fx-background-radius: 6;
+}
+.list-cell:hover     { -fx-background-color: #313244; }
+.list-cell:selected  { -fx-background-color: #45475a; }
+
+/* ── Zone chat ───────────────────────────────── */
+.chat-root   { -fx-background-color: #1e1e2e; }
+.chat-title  {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #cdd6f4;
+    -fx-padding: 10 14;
+    -fx-background-color: #181825;
+    -fx-border-color: #313244;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* ── Zone défilement messages ────────────────── */
+.scroll-pane, .scroll-pane > .viewport {
+    -fx-background-color: #1e1e2e;
+}
+.messages-container {
+    -fx-padding: 12;
+    -fx-background-color: #1e1e2e;
+}
+
+/* ── Bulles de messages ──────────────────────── */
+.bulle-moi {
+    -fx-background-color: #89b4fa;
+    -fx-background-radius: 14 14 2 14;
+    -fx-padding: 8 12;
+}
+.bulle-autre {
+    -fx-background-color: #313244;
+    -fx-background-radius: 14 14 14 2;
+    -fx-padding: 8 12;
+}
+.bulle-auteur {
+    -fx-font-size: 11px;
+    -fx-text-fill: #585b70;
+}
+.bulle-moi .bulle-auteur {
+    -fx-text-fill: #1e1e2e;
+}
+.bulle-texte {
+    -fx-text-fill: #cdd6f4;
+    -fx-font-size: 13px;
+}
+.bulle-moi .bulle-texte {
+    -fx-text-fill: #1e1e2e;
+}
+
+/* ── Barre de saisie ─────────────────────────── */
+.input-bar {
+    -fx-background-color: #181825;
+    -fx-padding: 10 12;
+    -fx-border-color: #313244;
+    -fx-border-width: 1 0 0 0;
+    -fx-alignment: CENTER;
+}
