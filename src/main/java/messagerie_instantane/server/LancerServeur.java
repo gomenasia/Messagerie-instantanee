@@ -2,6 +2,7 @@ package messagerie_instantane.server;
 
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
+import java.util.Scanner;
 
 public class LancerServeur {
 
@@ -13,10 +14,21 @@ public class LancerServeur {
             LocateRegistry.createRegistry(PORT);
             ServeurMessagerie serveur = new ServeurMessagerie();
             Naming.bind("//localhost:" + PORT + "/" + NOM, serveur);
+
             System.out.println("✅ Serveur démarré sur le port " + PORT);
             System.out.println("   Adresse : //localhost:" + PORT + "/" + NOM);
+            System.out.println("──────────────────────────────────────");
+            System.out.println("   Appuyez sur ENTRÉE pour arrêter.");
+            System.out.println("──────────────────────────────────────");
+
+            // ← Bloque le thread principal : le serveur reste vivant
+            new Scanner(System.in).nextLine();
+
+            System.out.println("Arrêt du serveur...");
+            Naming.unbind("//localhost:" + PORT + "/" + NOM);
+
         } catch (Exception e) {
-            System.err.println("❌ Erreur au démarrage du serveur : " + e.getMessage());
+            System.err.println("❌ Erreur : " + e.getMessage());
             e.printStackTrace();
         }
     }

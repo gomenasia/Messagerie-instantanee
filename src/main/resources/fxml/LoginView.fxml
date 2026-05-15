@@ -16,7 +16,8 @@
 
         <TextField fx:id="serverField"
                 promptText="Adresse du serveur (ex: localhost)"
-                maxWidth="280"/>
+                maxWidth="280"
+                text="localhost"/>
 
         <Button text="Se connecter"
                 onAction="#onConnect"
