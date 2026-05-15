@@ -19,15 +19,15 @@
     <center>
         <VBox>
             <Label fx:id="salonLabel" text="Sélectionnez un salon"
-                   styleClass="chat-title"/>
+                    styleClass="chat-title"/>
 
             <ScrollPane fx:id="scrollPane"
                         VBox.vgrow="ALWAYS"
                         fitToWidth="true"
                         hbarPolicy="NEVER">
                 <VBox fx:id="messagesBox"
-                      styleClass="messages-container"
-                      spacing="6"/>
+                        styleClass="messages-container"
+                        spacing="6"/>
             </ScrollPane>
         </VBox>
     </center>
@@ -36,9 +36,9 @@
     <bottom>
         <HBox styleClass="input-bar" spacing="8">
             <TextField fx:id="inputField"
-                       HBox.hgrow="ALWAYS"
-                       promptText="Écrire un message…"
-                       onAction="#onEnvoi"/>
+                        HBox.hgrow="ALWAYS"
+                        promptText="Écrire un message…"
+                        onAction="#onEnvoi"/>
             <Button text="Envoyer"
                     onAction="#onEnvoi"
                     styleClass="btn-primary"/>

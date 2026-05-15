@@ -21,6 +21,9 @@ public class Salon extends UnicastRemoteObject implements InterfaceSujetDiscussi
         return titre;
     }
 
+    /**
+     * Gere l'ajout d'un client a un groupe de discussion
+     */
     @Override
     public synchronized void inscription(InterfaceAffichageClient c) throws RemoteException {
         if (!abonnes.contains(c)) {
@@ -28,11 +31,17 @@ public class Salon extends UnicastRemoteObject implements InterfaceSujetDiscussi
         }
     }
 
+    /**
+     * Gere la supression d'un client a un groupe de discussion
+     */
     @Override
     public synchronized void desInscription(InterfaceAffichageClient c) throws RemoteException {
         abonnes.remove(c);
     }
 
+    /**
+     * transmet un message a tout les client inscrit dans le groupe de discussion
+     */
     @Override
     public synchronized void diffuse(String message) throws RemoteException {
         List<InterfaceAffichageClient> aSupprimer = new ArrayList<>();

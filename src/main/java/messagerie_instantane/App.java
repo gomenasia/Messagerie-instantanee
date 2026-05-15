@@ -9,8 +9,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(
-            getClass().getResource("/fxml/LoginView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/LoginView.fxml"));
         Scene scene = new Scene(loader.load(), 420, 320);
         scene.getStylesheets().add(
             getClass().getResource("/css/style.css").toExternalForm());
