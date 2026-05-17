@@ -130,8 +130,4 @@ public class ChatControle {
 
         Platform.runLater(() -> scrollPane.setVvalue(1.0));
     }
-
-    public void ouvrir(InterfaceServeurForum server, String pseudo){
-        
-    }
 }

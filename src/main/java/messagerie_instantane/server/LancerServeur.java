@@ -22,10 +22,13 @@ public class LancerServeur {
             System.out.println("──────────────────────────────────────");
 
             // ← Bloque le thread principal : le serveur reste vivant
-            new Scanner(System.in).nextLine();
+            Scanner scan = new Scanner(System.in);
+            scan.nextLine();
 
             System.out.println("Arrêt du serveur...");
             Naming.unbind("//localhost:" + PORT + "/" + NOM);
+
+            scan.close();
 
         } catch (Exception e) {
             System.err.println("❌ Erreur : " + e.getMessage());
