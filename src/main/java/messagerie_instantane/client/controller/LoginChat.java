@@ -42,4 +42,6 @@ public class LoginChat {
             errorLabel.setText("Connexion impossible : " + e.getMessage());
         }
     }
+
+    //TODO implemente le stockage de serveur
 }
