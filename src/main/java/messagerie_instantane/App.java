@@ -3,16 +3,36 @@ package messagerie_instantane;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/LoginView.fxml"));
-        Scene scene = new Scene(loader.load(), 420, 320);
+
+        BorderPane root = new BorderPane();
+
+        // ── Initialise le NavigationManager avec le root ──────────────
+        // À faire AVANT de charger le premier FXML, pour que les
+        // controllers puissent déjà utiliser NavigationManager si besoin
+        NavigationManager.init(root);
+
+        // ── Charge et affiche le panel Login au démarrage ─────────────
+        Pane panelLogin = FXMLLoader.load(
+            getClass().getResource("/fxml/LoginView.fxml"));
+        root.setCenter(panelLogin);
+
+        // ── Mise en page et scène ─────────────────────────────────────
+        StackPane wrapper = new StackPane(root);
+        wrapper.setStyle("-fx-background-color: transparent;");
+
+        Scene scene = new Scene(wrapper, 1400, 700);
         scene.getStylesheets().add(
             getClass().getResource("/css/style.css").toExternalForm());
+
         stage.setTitle("Messagerie Instantanée");
         stage.setScene(scene);
         stage.show();
